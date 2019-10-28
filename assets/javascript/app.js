@@ -11,3 +11,20 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database()
 
+$("#submit").on("click", function(event) {
+    event.preventDefault();
+    let trainName = $("#trainName").val().trim();
+    let destination = $("#destination").val().trim();
+    let trainTime = $("#trainTime").val().trim();
+    let frequency = $("#frequency").val().trim();
+    console.log(trainName);
+    console.log(destination);
+    console.log(trainTime);
+    console.log(frequency);
+
+    $("#trainName").val("");
+    $("#destination").val("");
+    $("#trainTime").val("");
+    $("#frequency").val("");
+
+});
