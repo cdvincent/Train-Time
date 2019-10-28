@@ -1,0 +1,19 @@
+.container {
+    margin: 0 auto;
+}
+
+#jumbo {
+    background-color: blueviolet;
+    color: white;
+    text-align: center;
+}
+
+#cardHead {
+    background-color:navy;
+    color: white;
+}
+
+#trainForm {
+    padding: 20px;
+}
+
