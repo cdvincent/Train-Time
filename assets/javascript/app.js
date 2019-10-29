@@ -16,10 +16,6 @@ $("#submit").on("click", function(event) {
     let destination = $("#destination").val().trim();
     let trainTime = $("#trainTime").val().trim();
     let frequency = $("#frequency").val().trim();
-    console.log(trainName);
-    console.log(destination);
-    console.log(trainTime);
-    console.log(frequency);
 
     $("#trainName").val("");
     $("#destination").val("");
@@ -33,10 +29,21 @@ $("#submit").on("click", function(event) {
         Frequency: frequency,
     })
 });
-
 database.ref().on("child_added", function(snapshot) {
-    trainName = snapshot.child("TrainName").val();
-    destination = snapshot.child("Destination").val();
-    trainTime = snapshot.child("TrainTime").val();
-    frequency = snapshot.child("Frequency").val();
-})
+    let trainName = snapshot.child("TrainName").val();
+    let destination = snapshot.child("Destination").val();
+    let trainTime = snapshot.child("TrainTime").val();
+    let frequency = snapshot.child("Frequency").val();
+    // nextArrival = 
+
+
+    let newTrain = $(`<tr>
+                                <td>${trainName}</td>
+                                <td>${destination}</td>
+                                <td>${frequency}</td>
+                                <td>"hi"</td>
+                                <td>"hello"</td>
+                                </tr>`);
+
+         $(".newRow").append(newTrain);
+});
