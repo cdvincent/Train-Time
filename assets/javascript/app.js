@@ -17,6 +17,11 @@ $("#submit").on("click", function(event) {
     let trainTime = $("#trainTime").val().trim();
     let frequency = $("#frequency").val().trim();
 
+    if (trainName === "" || destination === "" || trainTime === "" || frequency === "") {
+        alert("Please fill out the entire form.");
+        return false;
+    } else {
+
     $("#trainName").val("");
     $("#destination").val("");
     $("#trainTime").val("");
@@ -28,6 +33,7 @@ $("#submit").on("click", function(event) {
         TrainTime: trainTime,
         Frequency: frequency
     })
+}
 });
 database.ref().on("child_added", function(snapshot) {
     let trainName = snapshot.child("TrainName").val();

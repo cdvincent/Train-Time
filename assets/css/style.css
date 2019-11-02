@@ -1,11 +1,24 @@
+body {
+    background-image: url("../images/backimage.jpg");
+    background-size: 120%;
+    background-
+}
+
 .container {
     margin: 0 auto;
     margin-bottom: 20px;
 }
 
+#tableBack{
+    background-color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
 
 #jumbo {
-    background-color: blueviolet;
+    background-color: rgb(75, 66, 66);
     color: white;
     text-align: center;
 }
@@ -19,3 +32,9 @@
     padding: 20px;
 }
 
+#tableStyle  {
+    color: red;
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 20px;
+    text-align: center;
+}
