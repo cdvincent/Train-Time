@@ -16,15 +16,15 @@ $("#submit").on("click", function(event) {
     let destination = $("#destination").val().trim();
     let trainTime = $("#trainTime").val().trim();
     let frequency = $("#frequency").val().trim();
+    console.log(typeof(parseInt(frequency)));
 
     if (trainName === "" || destination === "" || trainTime === "" || frequency === "") {
         alert("Please fill out the entire form.");
         return false;
-    } else if (typeof(trainName !== "string") || typeof(destination !== "string") || typeof(trainTime !== "integer" || typeof(frequency !== "integer"))) {
-        alert("Please fill the form out properly"); 
+    } else if (!trainTime.match(/^([01][0-2]|2[0-4]):([0-5][0-9])$/)) {
+        alert("Please format the time as military time!");
         return false;
     } else {
-
     $("#trainName").val("");
     $("#destination").val("");
     $("#trainTime").val("");
