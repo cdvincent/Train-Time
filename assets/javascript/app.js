@@ -55,7 +55,6 @@ database.ref().on("child_added", function(snapshot) {
 
     if (typeof(trainName !== "string") || typeof(destination !== "string") || typeof(trainTime !== "integer" || typeof(frequency !== "integer"))) {
         alert("Please fill the form out properly");
-        break;
     } else{
 
     let newTrain = $(`<tr>
