@@ -1,7 +1,6 @@
 body {
     background-image: url("../images/backimage.jpg");
-    background-size: 120%;
-    background-
+    background-size: 100vh;
 }
 
 .container {

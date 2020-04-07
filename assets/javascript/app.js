@@ -53,8 +53,10 @@ database.ref().on("child_added", function(snapshot) {
     let nextArrival = moment().add(minAway, "minutes").format("HH:mm");
     console.log(nextArrival);
 
-    
-
+    if (typeof(trainName !== "string") || typeof(destination !== "string") || typeof(trainTime !== "integer" || typeof(frequency !== "integer"))) {
+        alert("Please fill the form out properly");
+        break;
+    } else{
 
     let newTrain = $(`<tr>
                                 <td>${trainName}</td>
@@ -65,4 +67,5 @@ database.ref().on("child_added", function(snapshot) {
                                 </tr>`);
 
          $(".newRow").append(newTrain);
+    };
 });
