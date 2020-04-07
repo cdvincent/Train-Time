@@ -20,6 +20,9 @@ $("#submit").on("click", function(event) {
     if (trainName === "" || destination === "" || trainTime === "" || frequency === "") {
         alert("Please fill out the entire form.");
         return false;
+    } else if (typeof(trainName !== "string") || typeof(destination !== "string") || typeof(trainTime !== "integer" || typeof(frequency !== "integer"))) {
+        alert("Please fill the form out properly"); 
+        return false;
     } else {
 
     $("#trainName").val("");
@@ -53,10 +56,6 @@ database.ref().on("child_added", function(snapshot) {
     let nextArrival = moment().add(minAway, "minutes").format("HH:mm");
     console.log(nextArrival);
 
-    if (typeof(trainName !== "string") || typeof(destination !== "string") || typeof(trainTime !== "integer" || typeof(frequency !== "integer"))) {
-        alert("Please fill the form out properly");
-    } else{
-
     let newTrain = $(`<tr>
                                 <td>${trainName}</td>
                                 <td>${destination}</td>
@@ -66,5 +65,4 @@ database.ref().on("child_added", function(snapshot) {
                                 </tr>`);
 
          $(".newRow").append(newTrain);
-    };
 });
